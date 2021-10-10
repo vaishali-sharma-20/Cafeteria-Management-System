@@ -1,0 +1,283 @@
+//Cafeteria Management System
+//Vaishali Sharma
+
+#include<iostream>
+using namespace std;
+class admin
+{
+	int b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0;
+
+public:
+	void welcome()
+	{
+		cout << "**********************************************************************************************************************" << endl;
+		cout << "**********************************************************************************************************************" << endl;
+		cout << "**********************************************************************************************************************" << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << "\t\t\t\t\t\tWELCOME TO MY CAFE CAFETERIA" << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		cout << "**********************************************************************************************************************" << endl;
+		cout << "**********************************************************************************************************************" << endl;
+		cout << "**********************************************************************************************************************" << endl;
+
+		system("pause");
+		menu();
+
+	}
+	void menu()
+	{
+		system("cls");
+		int a;
+		cout << "________________________________________________________________" << endl;
+		cout << "                      WELCOME TO CAFETERIA                      " << endl;
+		cout << "________________________________________________________________" << endl;
+		cout << "PRESS 1: TO OPEN ADMIN PORTAL" << endl;
+		cout << "PRESS 2: TO ORDER FOOD" << endl;
+		cin >> a;
+		{
+			if (a == 1)
+			{
+				admin_portal();
+			}
+			else if (a == 2)
+			{
+				Customer_portal();
+			}
+		}
+
+	}
+	void admin_portal()
+	{
+		int i, k;
+		int pswd;
+		char str[15];
+		cout << "________________________________________________________________" << endl;
+		cout << "                     WELCOME TO ADMIN PORTAL                    " << endl;
+		cout << "________________________________________________________________" << endl;
+		cout << "Enter UserName : ";
+		cin >> str;
+		cout << "Enter Pasword : ";
+		cin >> pswd;
+		cout << "________________________________________________________________" << endl;
+		Customer_portal();
+	}
+	void Customer_portal()
+	{
+		int i, k;
+
+		cout << "________________________________________________________________" << endl;
+		cout << "PRESS 1: TO ORDER BURGER.  " << "||PRICE : Rs. 360 ||" << endl;
+		cout << "PRESS 2: TO ORDER SANDWICH." << "||PRICE : Rs. 210 ||" << endl;
+		cout << "PRESS 3: TO ORDER PIZZA.   " << "||PRICE : Rs. 499 ||" << endl;
+		cout << "PRESS 4: TO ORDER COFFEE.  " << "||PRICE : Rs. 90  ||" << endl;
+		cout << "PRESS 5:TO ORDER COKE.     " << "||PRICE : Rs. 80  ||" << endl;
+		cout << "________________________________________________________________" << endl;
+		cin >> k;
+
+		if (k == 1)
+		{
+			cout << "________________________________________________________________" << endl;
+			cout << "Enter Quantity: ";
+			cin >> i;
+			cout << "________________________________________________________________" << endl;
+			b1 = 360 * i;
+			cout << "Total of Burger : " << b1 << endl;
+			system("pause");
+			system("cls");
+			function();
+		}
+		else if (k == 2)
+		{
+			cout << "________________________________________________________________" << endl;
+			cout << "Enter Quantity: ";
+			cin >> i;
+			cout << "________________________________________________________________" << endl;
+			b2 = 210 * i;
+			cout << "Total of Sandwich : " << b2 << endl;
+			system("pause");
+			system("cls");
+			function();
+		}
+		else if (k == 3)
+		{
+			cout << "________________________________________________________________" << endl;
+			cout << "Enter Quantity: ";
+			cin >> i;
+			cout << "________________________________________________________________" << endl;
+			b3 = 499 * i;
+			cout << "Total of Pizza : " << b3 << endl;
+			system("pause");
+			system("cls");
+			function();
+		}
+		else if (k == 4)
+		{
+			cout << "________________________________________________________________" << endl;
+			cout << "Enter Quantity: ";
+			cin >> i;
+			cout << "________________________________________________________________" << endl;
+			b4 = 90 * i;
+			cout << "Total of Coffee : " << b4 << endl;
+			system("pause");
+			system("cls");
+			function();
+		}
+		else if (k == 5)
+		{
+			cout << "________________________________________________________________" << endl;
+			cout << "Enter Quantity: ";
+			cin >> i;
+			cout << "________________________________________________________________" << endl;
+			b5 = 80 * i;
+			cout << "Total of Coke : " << b5 << endl;
+			system("pause");
+			system("cls");
+			function();
+		}
+		else
+		{
+			cout << "INVALID INPUT !!";
+			Customer_portal();
+		}
+		cout << endl;
+		cout << "________________________________________________________________" << endl;
+	}
+	void function()
+	{
+
+		int k;
+		cout << "________________________________________________________________" << endl;
+		cout << "Press 1: To Order Another." << endl;
+		cout << "Press 2:  To Finish/ For Bill" << endl;
+		cout << "Press 3:  To Exit" << endl;
+		cin >> k;
+		cout << "________________________________________________________________" << endl;
+		if (k == 1)
+		{
+			Customer_portal();
+		}
+		else if (k == 2)
+		{
+			system("cls");
+			int total = 0;
+			cout << "\tBurger                |              : " << b1 << endl;
+			cout << "\tSandwich              |              : " << b2 << endl;
+			cout << "\tPizza                 |              : " << b3 << endl;
+			cout << "\tCoffee                |              : " << b4 << endl;
+			cout << "\tCoke                  |              : " << b5 << endl;
+			total = b1 + b2 + b3 + b4 + b5;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << "You Have to Pay Rs. " << total << endl;
+		}
+		int v;
+		cout << "----------------------------  PAYMENT METHOD  -------------------------------" << endl;
+		cout << "PRESS 1: TO PAY CASH" << endl;
+		cout << "PRESS 2: TO PAY WITH CARD" << endl;
+		cin >> v;
+
+		if (v == 1)
+		{
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  PAY CASH  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+			cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  THANK YOU  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+			exit;
+		}
+		else if (v == 2)
+		{
+			int cd, no;
+			cout << "ENTER CARD NO. : ";
+			cin >> cd;
+			cout << "ENTER PIN (We Never Save Your Pin) : ";
+			cin >> no;
+			system("cls");
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << endl;
+			cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  THANK YOU  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
+		}
+		else if (v != 1 && v != 2)
+		{
+			cout << "INVALID" << endl;
+
+		}
+
+		else if (k == 3)
+		{
+			system("cls");
+			cout << "First Pay the Bill than only you can exit" << endl;
+			system("cls");
+			function();
+			exit(0);
+		}
+		else
+		{
+			cout << "--------------------INVALID INPUT !!!-------------------";
+			exit(0);
+		}
+	}
+
+	void reorder()
+	{
+		int k, i;
+		cout << "________________________________________________________________" << endl;
+		cout << "PRESS 1: TO ORDER BURGER." << endl;
+		cout << "PRESS 2: TO ORDER SANDWICH." << endl;
+		cout << "PRESS 3: TO ORDER PIZZA." << endl;
+		cout << "PRESS 4: TO ORDER COFFEE." << endl;
+		cout << "PRESS 5:TO ORDER COKE." << endl;
+		cin >> k;
+		cout << "________________________________________________________________" << endl;
+		if (k == 1 || k == 2 || k == 3 || k == 4 || k == 5)
+		{
+			cout << "________________________________________________________________" << endl;
+			cout << "Enter Quantity: ";
+			cout << "________________________________________________________________" << endl;
+			cin >> i;
+		}
+		else
+		{
+			cout << "________________________________________________________________" << endl;
+			cout << "INVALID INPUT !!" << endl;
+			cout << "________________________________________________________________" << endl;
+			exit(0);
+		}
+	}
+
+};
+int main()
+{
+
+	admin ad1;
+	ad1.welcome();
+
+
+	return 0;
+}
